@@ -1,4 +1,4 @@
-package playground.sse;
+package playground.sse.controller;
 
 import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
@@ -6,6 +6,8 @@ import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.http.sse.Event;
 import org.reactivestreams.Publisher;
+import playground.sse.domain.Author;
+import playground.sse.service.AuthorService;
 
 @Controller("/author")
 public class AuthorController {

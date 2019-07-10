@@ -1,4 +1,4 @@
-package playground.sse;
+package playground.sse.domain;
 
 public class Author {
 
