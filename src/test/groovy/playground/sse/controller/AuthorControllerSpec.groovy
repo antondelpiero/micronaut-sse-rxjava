@@ -14,7 +14,6 @@ import spock.lang.Shared
 import spock.lang.Specification
 import spock.util.concurrent.PollingConditions
 
-@MicronautTest
 class AuthorControllerSpec extends Specification {
 
     @Shared

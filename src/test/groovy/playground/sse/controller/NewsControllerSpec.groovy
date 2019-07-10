@@ -13,7 +13,6 @@ import spock.lang.Shared
 import spock.lang.Specification
 import spock.util.concurrent.PollingConditions
 
-@MicronautTest
 class NewsControllerSpec extends Specification {
 
     @Shared
@@ -33,12 +32,12 @@ class NewsControllerSpec extends Specification {
     void "test news endpoint for subscribe and publish"() {
         given: "container to hold the events and subscription for sse"
         List<Map> eventsFired = []
-        def request = HttpRequest.GET("/v1/topics/news/events")
+        def request = HttpRequest.GET("/author/events")
         Flowable<Event<Map>> response = rxSseClient.eventStream(request, Map)
         def disposable = response.subscribe({ event -> eventsFired.add(event.data) })
 
         when: "an event was fired to the observer"
-        def req = HttpRequest.POST("/v1/topics/news/publish", [name: "a"])
+        def req = HttpRequest.POST("/author/publish", [name: "a"])
         client.toBlocking().exchange(req)
 
         then: "response got pushed"
