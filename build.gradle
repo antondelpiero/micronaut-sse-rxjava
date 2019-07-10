@@ -35,7 +35,7 @@ dependencies {
 
     compile "io.micronaut:micronaut-discovery-client"
     compile "io.micronaut:micronaut-management"
-    runtime "io.micronaut.configuration:micronaut-jmx"
+    compile "io.micronaut:micronaut-security-jwt"
 
     compileOnly "io.micronaut:micronaut-inject-java"
     runtime "ch.qos.logback:logback-classic:1.2.3"
@@ -44,7 +44,7 @@ dependencies {
     testCompile("org.spockframework:spock-core") {
         exclude group: "org.codehaus.groovy", module: "groovy-all"
     }
-    testCompile "io.micronaut.test:micronaut-test-spock:1.0.1"
+    testCompile "io.micronaut.test:micronaut-test-spock"
 }
 
 shadowJar {
